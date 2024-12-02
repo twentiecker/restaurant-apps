@@ -8,7 +8,7 @@ body {
   font-family: "Inter", sans-serif;
 }
 .container {
-  padding: 16px 32px;
+  padding: 10px 32px;
   max-width: 1200px;
   margin-inline: auto;
 }
@@ -17,10 +17,16 @@ body {
   display: flex;
   align-items: center;
 }
+#search-button {
+  min-width: 44px;
+  min-height: 44px;
+}
 #drawer-button {
   border: none;
   background-color: transparent;
   font-size: 1.8rem;
+  min-width: 44px;
+  min-height: 44px;
 }
 .hero__image > img {
   max-width: 100%;
@@ -50,7 +56,7 @@ body {
 .hero {
   min-height: calc(100vh - 72px);
 }
-.playlist {
+.restolist {
   margin-top: 3rem;
 }
 .section-title {
@@ -58,33 +64,40 @@ body {
   text-align: center;
   font-size: 2rem;
 }
-.music-list {
+.resto-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin-top: 2rem;
   gap: 1.5rem;
 }
-#musicImage {
+#restoImage {
   max-width: 100%;
 }
-.music-list__item {
+.resto-list__item {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   overflow: hidden;
 }
-.music-list__item > .card {
+.resto-list__item > .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f9f5ed;
 }
-.music-list__item__audio {
+.resto-list__item__audio {
   margin-top: 0.5rem;
   max-width: 100%;
 }
 .card-body {
   padding: 0.5rem;
+}
+.card-body #restoRating {
+  padding-bottom: 0.8rem;
+  font-weight: bold;
+}
+.card-body #restoName {
+  padding-bottom: 0.6rem;
 }
 footer {
   padding: 1rem;
@@ -150,6 +163,10 @@ header .navlist.open {
     color: #000;
     font-size: 1.09rem;
     padding: 0.25rem;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
   }
   #navList > li > a:hover {
     text-decoration: underline;
@@ -176,31 +193,6 @@ header .navlist.open {
     font-size: 3.5rem;
   }
 }
-/* Loader */
-.loader {
-  box-sizing: border-box;
-  display: inline-block;
-  border: 6px solid #fff;
-  border-radius: 50%;
-  border-bottom-color: #3b855b;
-  width: 5rem;
-  height: 5rem;
-  animation: rotation 1s linear infinite;
-  margin-inline: auto;
-}
-#loader {
-  text-align: center;
-}
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* TODO 3 : Tambahkan style untuk Skip To Content */
 a.skip-link {
   position: absolute;
   top: -40px;
@@ -218,7 +210,6 @@ a.skip-link {
   border-bottom-right-radius: 5px;
 }
 
-/* TODO 4 : Tambahkan style untuk focus */
 :focus {
   outline: 2px solid #3b855b;
   outline-offset: 4px;

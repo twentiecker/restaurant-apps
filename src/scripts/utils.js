@@ -1,41 +1,29 @@
-export function generateMusicItemUsingTemplate({
+export function generateRestoItemUsingTemplate({
   id,
-  artLink,
-  title,
-  signature,
-  audioLink,
+  pictureId,
+  name,
+  rating,
+  description,
 }) {
-  const musicItemTemplate = document.getElementById("musicitemtemplate");
+  const restoItemTemplate = document.getElementById("restoitemtemplate");
 
-  const element = musicItemTemplate.content.cloneNode(true);
+  const element = restoItemTemplate.content.cloneNode(true);
 
-  const article = element.querySelector("[data-musicid]");
-  article.setAttribute("data-musicid", id);
+  const article = element.querySelector("[data-restoid]");
+  article.setAttribute("data-restoid", id);
 
-  const musicImage = element.getElementById("musicImage");
-  musicImage.src = artLink;
-  musicImage.alt = title;
+  const restoImage = element.getElementById("restoImage");
+  restoImage.src = pictureId;
+  restoImage.alt = name;
 
-  const musicTitle = element.getElementById("musicTitle");
-  musicTitle.textContent = title;
+  const restoName = element.getElementById("restoName");
+  restoName.textContent = name;
 
-  const musicSignature = element.getElementById("musicSignature");
-  musicSignature.innerHTML = signature;
+  const restoRating = element.getElementById("restoRating");
+  restoRating.innerHTML = "Rating: " + rating;
 
-  const musicAudio = element.getElementById("musicAudio");
-  musicAudio.src = audioLink;
-  // TODO 5 : Tambahkan title pada musicAudio
-  musicAudio.setAttribute("title", title);
+  const restoDescription = element.getElementById("restoDescription");
+  restoDescription.innerHTML = description;
 
   return element;
-}
-
-export function showLoading() {
-  const musicsLoader = document.getElementById("loader");
-  musicsLoader.style.display = "block";
-}
-
-export function hideLoading() {
-  const musicsLoader = document.getElementById("loader");
-  musicsLoader.style.display = "none";
 }
